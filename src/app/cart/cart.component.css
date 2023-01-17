@@ -1,9 +1,30 @@
 div {
-    margin: 10px;
-    padding: 10px;
-  }
-  
-  h2 {
-    color: blue;
-  }
-  
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.home {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  max-width: 45px;
+  max-height: 45px;
+  cursor: pointer;
+}
+
+.image-main  {
+  max-width: 300px;
+  max-height: 300px;
+  margin-bottom: 10px;
+}
+
+.button {
+  max-width: fit-content
+}
+
+.clear-button{
+  float: right;
+  margin-top: 15px;
+}

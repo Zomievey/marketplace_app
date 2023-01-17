@@ -12,6 +12,8 @@ import { AddToCartDialogComponent } from './add-to-cart-dialog/add-to-cart-dialo
 import { CartService } from './cart.service';
 import { CartComponent } from './cart/cart.component';
 import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { AppRoutingModule } from './app-routing.module';
     NoopAnimationsModule,
     MatDialogModule,
     AppRoutingModule,
+    RouterModule,
   ],
   entryComponents: [AddToCartDialogComponent],
   providers: [CartService],

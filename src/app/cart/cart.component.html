@@ -1,9 +1,25 @@
-<div *ngIf="cartItems.length > 0">
-    <h2>Cart</h2>
-    <div *ngFor="let item of cartItems">
-        {{ item.name }} - {{ item.price }}
+<div>
+    <img class="home" (click)="goToMain()" src="https://cdn-icons-png.flaticon.com/512/60/60817.png" alt="" />
+
+</div>
+<div class="clear-button"><button (click)="clearCart()">Clear Cart</button></div>
+<div>
+    <h1>Your Items:</h1>
+</div>
+
+
+
+<div class="container-fluid col" *ngIf="cartItems && cartItems.length > 0">
+    <div class="row" *ngFor="let item of cartItems">
+        <div>
+            <img class="image-main" src="{{ item.image }}" />
+            <h1>{{ item.name }}</h1>
+            <h3>{{ item.category }}</h3>
+            <h2>{{ item.price }}</h2>
+            <div><button class="button" (click)="removeItem(item)">Remove Item</button></div>
+        </div>
     </div>
 </div>
-<div *ngIf="cartItems.length === 0">
-    <h2>Your cart is empty</h2>
+<div class="empty-message" *ngIf="!cartItems || cartItems.length == 0">
+    <h3>No items are in your cart!</h3>
 </div>

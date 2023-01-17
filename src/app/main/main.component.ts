@@ -10,10 +10,13 @@ import { productsJSON } from '../../products';
 })
 export class MainComponent implements OnInit {
   products: any = productsJSON.products;
-  filteredProducts: any;
+  filteredProducts = this.products;
 
   constructor(private router: Router) { }
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.filteredProducts = this.products;
+  }
+
 
   goToCart() {
     this.router.navigate(['/cart']);

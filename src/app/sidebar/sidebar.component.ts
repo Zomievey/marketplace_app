@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { productsJSON } from '../../products';
 import { MatDialog } from '@angular/material/dialog';
 import { AddToCartDialogComponent } from '../add-to-cart-dialog/add-to-cart-dialog.component';
+import { CartService } from '../cart.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class SidebarComponent {
   selectedCategory: string[] = [];
   filteredProducts: any;
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog, public cartService: CartService) {
     this.categories = [...new Set(this.products.map((product: { category: any; }) => product.category))];
     this.filteredProducts = this.products;
   }
@@ -52,11 +53,15 @@ export class SidebarComponent {
     }
   }
 
- openAddToCartDialog(product: any) {
+  openAddToCartDialog(product: any) {
     const dialogRef = this.dialog.open(AddToCartDialogComponent, {
       data: { product: product }
-
-    }); console.log("added to cart");
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.cartService.addItem(product);
+      }
+    });
   }
-  
+
 }
