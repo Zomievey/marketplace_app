@@ -1,0 +1,20 @@
+<div><img (click)="goToCart()" class="cart"
+    src="https://media.istockphoto.com/id/1206806317/vector/shopping-cart-icon-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=1RRQJs5NDhcB67necQn1WCpJX2YMfWZ4rYi1DFKlkNA="
+    alt=""></div>
+
+<div class="main">
+  <app-sidebar [products]="products"></app-sidebar>
+</div>
+
+<div class="products">
+  <div class="grid">
+    <div *ngFor="let product of filteredProducts">
+      <img class="image-main" src="{{ product.image }}" />
+      <div>
+        <h1>{{ product.name }}</h1>
+        <h3>{{ product.category }}</h3>
+        <h2>{{ product.price }}</h2>
+      </div>
+    </div>
+  </div>
+</div>

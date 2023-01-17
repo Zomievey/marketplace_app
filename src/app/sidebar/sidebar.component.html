@@ -1,0 +1,29 @@
+<div class="sidebar">
+    <mat-form-field>
+        <mat-label>Filter by category: </mat-label>
+        <mat-select multiple [(ngModel)]="selectedCategories" (ngModelChange)="filterByCategory()">
+            <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div class="sort-container">
+        <label>Sort by:</label>
+        <div class="sort-input">
+            <input type="radio" name="sort" [(ngModel)]="sortBy" value="price" (change)="sortItems()">
+            <label>Price (lowest to highest)</label>
+        </div>
+        <div class="sort-name">
+            <input type="radio" name="sort" [(ngModel)]="sortBy" value="name" (change)="sortItems()">
+            <label>Name (alphabetical)</label>
+        </div>
+    </div>
+    <div class="products-list">
+        <div *ngFor="let product of filteredProducts">
+            <img class="image-main" src="{{ product.image }}" />
+            <div class="categories">{{ product.name }} - {{ product.price }} - {{ product.category }}
+                <button class="add-button" (click)="openAddToCartDialog(product)">Add to Cart</button>
+            </div>
+        </div>
+
+    </div>
+</div>

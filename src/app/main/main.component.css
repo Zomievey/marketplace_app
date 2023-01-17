@@ -1,0 +1,32 @@
+.grid {
+    display: flex;
+	flex-direction: row;
+	justify-content: left;
+    flex-wrap: wrap;
+	padding: 1em;
+	color: black;
+	font-family: "Roboto", sans-serif;
+    
+
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    flex-wrap: wrap;
+    padding: 1em;
+    color: black;
+    font-family: "Roboto", sans-serif;
+}
+
+.cart {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    max-width: 45px;
+    max-height: 45px;
+    cursor: pointer;
+  }
+
+  

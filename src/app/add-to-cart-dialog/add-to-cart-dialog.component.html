@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Add to Cart</h1>
+<mat-dialog-content>
+    <p>Are you sure you want to add {{data.product.name}} to your cart?</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <div class="button-dialog"><button mat-button mat-dialog-close>Cancel</button></div>
+    <button mat-button [mat-dialog-close]="true" (click)="addToCart()">Add to Cart</button>
+</mat-dialog-actions>
