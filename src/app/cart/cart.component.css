@@ -14,17 +14,17 @@ div {
   cursor: pointer;
 }
 
-.image-main  {
+.image-main {
   max-width: 300px;
   max-height: 300px;
   margin-bottom: 10px;
 }
 
 .button {
-  max-width: fit-content
+  max-width: fit-content;
 }
 
-.clear-button{
-  float: right;
-  margin-top: 15px;
+.clear-button {
+  display: flex;
+  flex-direction: row;
 }
